@@ -11,8 +11,4 @@ public class DecoyDuck extends Duck {
     void display() {
         System.out.println("I'm a duck Decoy");
     }
-
-    public void fly() {
-        // do nothing
-    }
 }

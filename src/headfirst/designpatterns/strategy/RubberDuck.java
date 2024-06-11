@@ -11,8 +11,4 @@ public class RubberDuck extends Duck {
     void display() {
         System.out.println("I'm a rubber duckie");
     }
-
-    public void fly() {
-        // do nothing
-    }
 }
