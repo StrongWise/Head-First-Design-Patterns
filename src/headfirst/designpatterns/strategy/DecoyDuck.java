@@ -3,13 +3,13 @@ package headfirst.designpatterns.strategy;
 /**
  * description :
  */
-public class RubberDuck extends Duck {
+public class DecoyDuck extends Duck {
     public void quack() {
-        System.out.println("Squeak");
+        // do nothing
     }
 
     void display() {
-        System.out.println("I'm a rubber duckie");
+        System.out.println("I'm a duck Decoy");
     }
 
     public void fly() {
