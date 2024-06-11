@@ -1,7 +1,5 @@
 package headfirst.designpatterns.strategy;
 
-import headfirst.origin.strategy.FlyBehavior;
-
 /**
  * description :
  */
