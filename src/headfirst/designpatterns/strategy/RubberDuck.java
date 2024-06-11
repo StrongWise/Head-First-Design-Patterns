@@ -3,7 +3,7 @@ package headfirst.designpatterns.strategy;
 /**
  * description :
  */
-public class RubberDuck extends Duck implements Quackable {
+public class RubberDuck extends Duck implements QuackBehavior {
     public void quack() {
         System.out.println("Squeak");
     }

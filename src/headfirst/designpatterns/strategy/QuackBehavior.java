@@ -3,6 +3,6 @@ package headfirst.designpatterns.strategy;
 /**
  * description :
  */
-public interface Quackable {
+public interface QuackBehavior {
     void quack();
 }

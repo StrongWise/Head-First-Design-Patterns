@@ -3,6 +3,6 @@ package headfirst.designpatterns.strategy;
 /**
  * description :
  */
-public interface Flyable {
+public interface FlyBehavior {
     void fly();
 }
