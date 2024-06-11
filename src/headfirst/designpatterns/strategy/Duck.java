@@ -3,14 +3,14 @@ package headfirst.designpatterns.strategy;
 /**
  * description :
  */
-public class Duck {
+public abstract class Duck {
     public void quack() {
-
+        System.out.println("Squeak");
     }
+
     public void swim() {
-
+        System.out.println("All ducks float, even decoys!");
     }
-    public void display() {
 
-    }
+    abstract void display();
 }
