@@ -29,4 +29,7 @@ public abstract class Duck {
         quackBehavior = qb;
     }
 
+    public void quack() {
+        System.out.println("Quack");
+    }
 }
