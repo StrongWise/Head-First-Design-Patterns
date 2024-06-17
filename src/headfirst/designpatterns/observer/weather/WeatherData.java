@@ -1,15 +1,45 @@
 package headfirst.designpatterns.observer.weather;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * description :
  */
-public class WeatherData {
+public class WeatherData implements Subject {
+    private List<Observer> observers;
     private float temperature;
     private float humidity;
     private float pressure;
-    private CurrentConditionsDisplay currentConditionsDisplay;
-    private StatisticsDisplay statisticsDisplay;
-    private HeatIndexDisplay heatIndexDisplay;
+
+    public WeatherData() {
+        observers = new ArrayList<>();
+    }
+
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) {
+        observers.remove(o);
+    }
+
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(temperature, humidity, pressure);
+        }
+    }
+
+    public void measurementsChanged() {
+        notifyObservers();
+    }
+
+    public void setMeasurement(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
+    }
 
     public float getTemperature() {
         return temperature;
@@ -21,15 +51,5 @@ public class WeatherData {
 
     public float getPressure() {
         return pressure;
-    }
-
-    public void measurementsChanged() {
-        float temp = getTemperature();
-        float humidity = getHumidity();
-        float pressure = getPressure();
-
-        currentConditionsDisplay.update(temp, humidity, pressure);
-        statisticsDisplay.update(temp, humidity, pressure);
-        heatIndexDisplay.update(temp, humidity, pressure);
     }
 }
