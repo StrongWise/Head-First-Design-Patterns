@@ -8,6 +8,6 @@ public class DarkRoast extends Beverage {
 		description = "Dark Roast Coffee";
 	}
     public double cost() {
-        return .99;
+        return .99 + super.cost();
     }
 }
