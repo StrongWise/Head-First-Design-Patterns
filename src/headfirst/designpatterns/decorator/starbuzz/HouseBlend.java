@@ -8,6 +8,6 @@ public class HouseBlend extends Beverage {
 		description = "House Blend Coffee";
 	}
     public double cost() {
-        return .89 + super.cost();
+        return .89;
     }
 }
