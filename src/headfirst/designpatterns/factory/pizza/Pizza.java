@@ -6,30 +6,36 @@ import java.util.List;
 /**
  * description :
  */
-public class Pizza {
+public abstract class Pizza {
     String name;
     String dough;
     String sauce;
     List<String> toppings = new ArrayList<String>();
 
-    public String getName() {
-        return name;
+    void prepare() {
+		System.out.println("Prepare " + name);
+		System.out.println("Tossing dough...");
+		System.out.println("Adding sauce...");
+		System.out.println("Adding toppings: ");
+		for (String topping : toppings) {
+			System.out.println("   " + topping);
+		}
     }
 
-    public void prepare() {
-        System.out.println("Preparing " + name);
-    }
-
-    public void bake() {
+    void bake() {
         System.out.println("Baking " + name);
     }
 
-    public void cut() {
+    void cut() {
         System.out.println("Cutting " + name);
     }
 
-    public void box() {
+    void box() {
         System.out.println("Boxing " + name);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String toString() {
