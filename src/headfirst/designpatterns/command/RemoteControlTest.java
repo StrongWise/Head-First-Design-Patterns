@@ -1,7 +1,7 @@
 package headfirst.designpatterns.command;
 
 /**
- * description :
+ * description : Client
  */
 public class RemoteControlTest {
     public static void main(String[] args) {

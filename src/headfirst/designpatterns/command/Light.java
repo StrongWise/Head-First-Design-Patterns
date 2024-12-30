@@ -1,7 +1,7 @@
 package headfirst.designpatterns.command;
 
 /**
- * description :
+ * description : Receiver
  */
 public class Light {
 

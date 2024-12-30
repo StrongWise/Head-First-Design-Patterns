@@ -1,7 +1,7 @@
 package headfirst.designpatterns.command;
 
 /**
- * description :
+ * description : Invoker
  */
 public class SimpleRemoteControl {
     Command slot;

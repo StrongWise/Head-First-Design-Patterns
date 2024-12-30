@@ -1,7 +1,7 @@
 package headfirst.designpatterns.command;
 
 /**
- * description :
+ * description : Command
  */
 public class LightOnCommand implements Command {
     Light light;

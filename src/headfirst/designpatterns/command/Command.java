@@ -1,7 +1,7 @@
 package headfirst.designpatterns.command;
 
 /**
- * description :
+ * description : Command Interface
  */
 public interface Command {
     public void execute();
