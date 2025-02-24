@@ -6,6 +6,7 @@ package headfirst.designpatterns.command;
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommands;
 
     public RemoteControl() {
         onCommands = new Command[7];
@@ -16,6 +17,7 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        undoCommands = noCommand;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -25,10 +27,16 @@ public class RemoteControl {
 
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
+        undoCommands = onCommands[slot];
     }
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
+        undoCommands = offCommands[slot];
+    }
+
+    public void undoButtonWasPushed() {
+        undoCommands.undo();
     }
 
     public String toString() {
@@ -39,6 +47,7 @@ public class RemoteControl {
                     .append(onCommands[i].getClass().getSimpleName()).append("    ")
                     .append(offCommands[i].getClass().getSimpleName()).append("\n");
         }
+        stringBuff.append("[undo] ").append(undoCommands.getClass().getSimpleName()).append("\n");
         return stringBuff.toString();
     }
 
